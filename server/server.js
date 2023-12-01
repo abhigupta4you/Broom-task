@@ -23,7 +23,7 @@ db.connect((err) => {
 
   app.post("/api/saveData", (req, res) => {
     const { name, email, username, password, cnfpassword } = req.body;
-    const sql = "INSERT INTO data (name, email, age, city, country) VALUES (?, ?, ?, ?, ?)";
+    const sql = "INSERT INTO data (name, email, username, password, cnfpassword) VALUES (?, ?, ?, ?, ?)";
     db.query(sql, [name, email, username, password, cnfpassword], (err, result) => {
       if (err) {
         console.error("Error executing query:", err);
